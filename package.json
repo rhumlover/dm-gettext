@@ -1,23 +1,23 @@
 {
-  "name": "grunt-gettext",
+  "name": "dm-gettext",
   "description": "Gettext syntax parser across .js files. Does not use a classic grep, but a real function parsing using Esprima",
   "version": "0.1.0",
-  "homepage": "https://github.com/rhumlover/grunt-gettext",
+  "homepage": "https://github.com/rhumlover/dm-gettext",
   "author": {
     "name": "Thomas Le Jeune",
     "email": "thomas.lejeune@dailymotion.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/trhumlover/grunt-gettext"
+    "url": "git://github.com/trhumlover/dm-gettext"
   },
   "bugs": {
-    "url": "https://github.com/rhumlover/grunt-gettext/issues"
+    "url": "https://github.com/rhumlover/dm-gettext/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/rhumlover/grunt-gettext/blob/master/LICENSE-MIT"
+      "url": "https://github.com/rhumlover/dm-gettext/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.coffee",

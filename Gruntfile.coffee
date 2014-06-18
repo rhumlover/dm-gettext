@@ -54,7 +54,6 @@ module.exports = (grunt) ->
     # plugin's task(s), then test the result.
     grunt.registerTask "test", [
         "clean"
-        "staticfarm"
     ]
 
     # By default, lint and run all tests.
