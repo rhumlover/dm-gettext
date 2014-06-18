@@ -1,0 +1,44 @@
+{
+  "name": "grunt-gettext",
+  "description": "Gettext syntax parser across .js files. Does not use a classic grep, but a real function parsing using Esprima",
+  "version": "0.1.0",
+  "homepage": "https://github.com/rhumlover/grunt-gettext",
+  "author": {
+    "name": "Thomas Le Jeune",
+    "email": "thomas.lejeune@dailymotion.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trhumlover/grunt-gettext"
+  },
+  "bugs": {
+    "url": "https://github.com/rhumlover/grunt-gettext/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rhumlover/grunt-gettext/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.coffee",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "esprima": "~1.0.4",
+    "grunt-coffeelint": "0.0.8",
+    "lodash": "~2.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
