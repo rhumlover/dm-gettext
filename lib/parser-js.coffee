@@ -59,7 +59,7 @@ module.exports = class ParserJS
     'IfStatement':              (node) -> @walk [node.consequent, node.alternate]
     'Literal':                  (node) -> return
     'LogicalExpression':        (node) -> @walk [node.left, node.right]
-    'MemberExpression':         (node) -> @walk [node.object.body]
+    'MemberExpression':         (node) -> @walk [node.object]
     'NewExpression':            (node) -> @walk [node.callee].concat(node.arguments)
     'ObjectExpression':         (node) -> @walk node.properties
     'Property':                 (node) -> @walk [node.value]
