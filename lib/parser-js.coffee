@@ -46,9 +46,10 @@ module.exports = class ParserJS
     'BlockStatement':           (node) -> @walk node.body
     'BreakStatement':           (node) -> return
     'CallExpression':           (node) -> @walk [node.callee].concat(node.arguments)
+    'CatchClause':              (node) -> @walk [node.body]
     'ConditionalExpression':    (node) -> @walk [node.test, node.consequent, node.alternate]
     'ContinueStatement':        (node) -> return
-    'CatchClause':              (node) -> @walk [node.body]
+    'DoWhileStatement':         (node) -> @walk [node.body]
     'EmptyStatement':           (node) -> return
     'ExpressionStatement':      (node) -> @walk [node.expression]
     'ForInStatement':           (node) -> @walk [node.body]
@@ -57,6 +58,7 @@ module.exports = class ParserJS
     'FunctionExpression':       (node) -> @walk [node.body]
     'Identifier':               (node) -> return
     'IfStatement':              (node) -> @walk [node.consequent, node.alternate]
+    'LabeledStatement':         (node) -> @walk [node.body]
     'Literal':                  (node) -> return
     'LogicalExpression':        (node) -> @walk [node.left, node.right]
     'MemberExpression':         (node) -> @walk [node.object.body]
