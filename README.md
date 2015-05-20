@@ -1,89 +1,51 @@
-# grunt-gettext
+# dm-gettext
 
-> Gettext syntax parser across .js files. Does not use a classic grep, but a real function parsing using Esprima
+> *Gettext* syntax parser across `.js` files, parsing the **A**bstract **S**yntax **T**ree ([AST](https://github.com/estree/estree/blob/master/spec.md)) of your files. Instead of *grepping* your source code, it's gonna parse it using [Esprima](http://esprima.org/) and extract all calls at your i18n methods.
 
-## Getting Started
-This plugin requires Grunt `~0.4.1`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
-
-```shell
-npm install grunt-gettext --save-dev
-```
-
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```js
-grunt.loadNpmTasks('grunt-gettext');
-```
-
-## The "gettext" task
-
-### Overview
-In your project's Gruntfile, add a section named `gettext` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  gettext: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
+## Using with Grunt
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### `methods` *array*
+List of functions you call for getting translations in your application. Ex: `__`, `i18n`, `gettext`, `ngettext`...
 
-A string value that is used to do something with whatever.
+#### `header` *object*
+A text header that will be output on top of the `.po` destination file
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### `src` *array*
+List of paths pointing to your JavaScript sources (grunt wizards used: `**`, `*`, `!`)
 
-A string value that is used to do something else with whatever else.
+#### `dest` *string*
+Your `.po` destination file
 
-### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+### Real-world example
 
-```js
-grunt.initConfig({
-  gettext: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
+```
+module.exports = (grunt) ->
+
+  gettext:
+    options:
+      methods: ['$translate', '__', 'gettext', 'ngettext']
+      header:
+        'Project-Id-Version':           'hey-alfred@4.0'
+        'Report-Msgid-Bugs-To':         'Batman <batman@nananananananana.com>'
+        'Last-Translator':              'Batman <batman@nananananananana.com>'
+        'Language-Team':                'Gotham Inc. <gotham@nananananananana.com>'
+        'Language':                     'en'
+        'Plural-Forms':                 'nplurals=2; plural=(n != 1);'
+        'MIME-Version':                 '1.0'
+        'Content-Type':                 'text/plain; charset=UTF-8'
+        'Content-Transfer-Encoding':    '8bit'
+    src: [
+      'app/scripts/**/*.js'
+      '!app/scripts/vendor/*'
+    ]
+    dest: 'i18n/en.po'
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+## Tests
 
-```js
-grunt.initConfig({
-  gettext: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
+I'm using [Mocha](http://mochajs.org/) via [grunt-mocha-test](https://github.com/pghalliday/grunt-mocha-test):
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
+`$ grunt test` or `npm test`
