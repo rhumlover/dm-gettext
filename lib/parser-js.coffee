@@ -4,15 +4,13 @@ esprima = require 'esprima'
 
 module.exports = class ParserJS
 
-    __Regex = /__\(([^)]+)\)/gi
-
     constructor: (@file, @filter) ->
         try
-            process.stdout.write "Parsing #{file}"
+            process.stdout.write "Processing #{file}"
             content = fs.readFileSync file
-            syntax = esprima.parse content, {loc:true}
+            ast = esprima.parse content, {loc:true}
             @results = []
-            @main syntax
+            @main ast
             process.stdout.write ": #{@results.length} keys found\n"
             return @results
         catch e
