@@ -24,24 +24,31 @@ Your `.po` destination file
 ```
 module.exports = (grunt) ->
 
-  gettext:
-    options:
-      methods: ['$translate', '__', 'gettext', 'ngettext']
-      header:
-        'Project-Id-Version':           'hey-alfred@4.0'
-        'Report-Msgid-Bugs-To':         'Batman <batman@nananananananana.com>'
-        'Last-Translator':              'Batman <batman@nananananananana.com>'
-        'Language-Team':                'Gotham Inc. <gotham@nananananananana.com>'
-        'Language':                     'en'
-        'Plural-Forms':                 'nplurals=2; plural=(n != 1);'
-        'MIME-Version':                 '1.0'
-        'Content-Type':                 'text/plain; charset=UTF-8'
-        'Content-Transfer-Encoding':    '8bit'
-    src: [
-      'app/scripts/**/*.js'
-      '!app/scripts/vendor/*'
-    ]
-    dest: 'i18n/en.po'
+  grunt.initConfig {
+
+    gettext:
+      options:
+        methods: ['$translate', '__', 'gettext', 'ngettext']
+        header:
+          'Project-Id-Version':           'hey-alfred@4.0'
+          'Report-Msgid-Bugs-To':         'Batman <batman@nananananananana.com>'
+          'Last-Translator':              'Batman <batman@nananananananana.com>'
+          'Language-Team':                'Gotham Inc. <gotham@nananananananana.com>'
+          'Language':                     'en'
+          'Plural-Forms':                 'nplurals=2; plural=(n != 1);'
+          'MIME-Version':                 '1.0'
+          'Content-Type':                 'text/plain; charset=UTF-8'
+          'Content-Transfer-Encoding':    '8bit'
+      src: [
+        'app/scripts/**/*.js'
+        '!app/scripts/vendor/*'
+      ]
+      dest: 'i18n/en.po'
+
+  }
+
+  grunt.loadTasks 'tasks'
+  grunt.loadNpmTasks 'grunt-gettext'
 ```
 
 ## Tests
