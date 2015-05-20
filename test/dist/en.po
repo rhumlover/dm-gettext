@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: hey-alfred@4.0\n"
+"Report-Msgid-Bugs-To: Batman <batman@nananananananana.com>\n"
+"Last-Translator: Batman <batman@nananananananana.com>\n"
+"Language-Team: Gotham Inc. <gotham@nananananananana.com>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: Wed, 20 May 2015 22:40:23 GMT\n"
+
+#: test/prepare/source.js 15:24
+msgid "ArrayExpression"
+msgstr ""
+
+#: test/prepare/source.js 25:27
+msgid "AssignmentExpression"
+msgstr ""
+
+#: test/prepare/source.js 35:9
+msgid "BinaryExpression"
+msgstr ""
+
+#: test/prepare/source.js 45:5
+msgid "CallExpression"
+msgstr ""
+
+#: test/prepare/source.js 65:3
+msgid "TryStatement"
+msgstr ""
+
+#: test/prepare/source.js 69:3
+msgid "CatchClause"
+msgstr ""
+
+#: test/prepare/source.js 78:7
+msgid "ConditionalExpression"
+msgstr ""
+
+#: test/prepare/source.js 90:4
+msgid "DoWhileStatement"
+msgstr ""
+
+#: test/prepare/source.js 99:0
+msgid "ExpressionStatement"
+msgstr ""
+
+#: test/prepare/source.js 110:4
+msgid "ForInStatement"
+msgstr ""
+
+#: test/prepare/source.js 121:4
+msgid "ForStatement"
+msgstr ""
+
+#: test/prepare/source.js 147:4
+msgid "FunctionExpression"
+msgstr ""
+
+#: test/prepare/source.js 160:4
+msgid "IfStatement"
+msgstr ""
+
+#: test/prepare/source.js 172:12
+msgid "LabeledStatement"
+msgstr ""
+
+#: test/prepare/source.js 185:8
+msgid "LogicalExpression"
+msgstr ""
+
+#: test/prepare/source.js 195:28
+msgid "MemberExpression"
+msgstr ""
+
+#: test/prepare/source.js 205:33
+msgid "NewExpression"
+msgstr ""
+
+#: test/prepare/source.js 216:10
+msgid "Property"
+msgstr ""
+
+#: test/prepare/source.js 226:11
+msgid "ReturnStatement"
+msgstr ""
+
+#: test/prepare/source.js 235:0
+msgid "SequenceExpression"
+msgstr ""
+
+#: test/prepare/source.js 261:8
+msgid "SwitchCase"
+msgstr ""
+
+#: test/prepare/source.js 273:8
+msgid "VariableDeclaration"
+msgstr ""
+
+#: test/prepare/source.js 281:25
+msgid "VariableDeclarator"
+msgstr ""
+
+#: test/prepare/source.js 297:13
+msgid "%d test"
+msgid_plural ""
+msgstr[0] ""
+msgstr[1] ""
+
+#: test/prepare/source.js 300:0
+msgid "callto_gettext"
+msgstr ""
+
+#: test/prepare/source.js 301:0
+msgid "callto_ngettext %d"
+msgid_plural ""
+msgstr[0] ""
+msgstr[1] ""
