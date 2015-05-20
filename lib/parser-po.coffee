@@ -7,14 +7,14 @@ module.exports = class ParserPO
         @content = String(fs.readFileSync file)
         @lines = @content.split /\n+/g
 
-    getKeys: () ->
+    getKeys: ->
         results = []
         for l in @lines
             if matches = l.match /msgid "(.+)"/
                 results.push matches[1].replace /\\"/g, '"'
         results
 
-    getEmptyPlurals: () ->
+    getEmptyPlurals: ->
         results = []
         for l, index in @lines
             if l is 'msgid_plural ""'
