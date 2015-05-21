@@ -19,7 +19,7 @@ module.exports = (grunt) ->
             ]
 
         clean:
-            tests: ["tmp"]
+            tests: ['tmp', 'test/dist/*']
 
         mochaTest:
             test:
